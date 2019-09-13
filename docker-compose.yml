@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  tsdb:
+    image: influxdb:1.7
+    ports:
+      - "8086:8086"
+      - "8089:8089/udp"
+    volumes:
+      - "./data:/opt/influxdb/shared"
+      - "./config:/etc/influxdb"
